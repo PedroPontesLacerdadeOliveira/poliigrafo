@@ -42,13 +42,13 @@ function finalizar(){
     
     let veredito;
 if (contador<5){
-     veredito = "Inocente";
+     veredito = "Inocente. <hr> O Resultado coletado não aponta um certo envolvimento com o crime ocorrido.";
 }else if (contador == 5){
-    veredito = "Suspeito";
+    veredito = "Suspeito. <hr> O Resultado coletado aponta um certo envolvimento com o crime, mas não direto.";
 }else if (contador >= 6 && contador<=8){
-    veredito = "Cumplice";
+    veredito = "Cumplice. <hr> O Resultado coletado aponta um provável envolvimento direto em relação ao crime.";
 }else {
-    veredito = "Culpado";
+    veredito = "Culpado <hr> O Resultado coletado aponta que o entrevistado em questão tem alta probabilidade de ser o responsável.";
 }
     const fim = document.querySelector('.card')
     fim.innerHTML= 
