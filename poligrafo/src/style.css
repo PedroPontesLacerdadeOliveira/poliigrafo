@@ -1,0 +1,136 @@
+body{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(59, 23, 23);
+    color: beige;
+    font-family: "Special Elite", system-ui;
+    margin: 0;
+}
+.banner{
+    width: 100%;
+    height: 100%;
+    background-image: url(image/Better-Call-Saul-Season-4.jpg);
+    background-blend-mode: darken;
+    background-color: rgba(5, 5, 5, 0.553);
+}
+nav{
+    display: flex;
+    height: 50px;
+    padding-bottom: 20px;
+    background-color: rgba(3, 1, 1, 0.373);
+    width: 100%;
+    justify-content: center;
+    
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    margin-bottom: 0px;
+}
+.card{
+    width: 500px;
+    height: 220px;
+    background-color: #e1dcd6f9;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.737);
+    text-align: center;
+    color: rgb(70, 28, 28);  
+}
+p{
+    font-size: x-large;
+    
+}
+h4{
+    color: #000;
+    font-weight: bold;
+    margin-top: 50px;
+    font-size: x-large;
+    font-style: italic;
+}
+#sim {
+    background-color: rgb(87, 23, 23);
+    border-radius: 5px;
+    border-style: none;
+    height: 80px;
+    width: 150px;
+    transition: 0.2s;
+    font-family: times;
+    color: #fcf1e3;
+}
+#nao{
+    background-color: rgb(87, 23, 23);
+    border-radius: 5px;
+    border-style: none;
+    height: 80px;
+    width: 150px;
+    transition: 0.2s;
+    font-family: times;
+    color: #fcf1e3;
+}
+
+#sim:hover{
+    background-color: rgb(29, 14, 14);
+    color: azure;
+    cursor: pointer;
+}
+#nao:hover{
+    background-color: rgb(29, 14, 14);
+    color: azure;
+    cursor: pointer;
+}
+#mypopover{
+background-color: rgb(87, 23, 23);
+color: azure; 
+font-family: sans-serif;
+padding: 50px;
+border-radius: 15px;
+border: none;
+text-align: center;
+width: 600px;
+position: fixed;
+inset: 50% auto auto 50%;
+transform: translate(-50%, -50%);
+height: 500px;
+}
+
+#mypopover::backdrop{
+    background-color: rgba(3, 1, 1, 0.373);
+}
+button.primeiro {
+  margin: 10px;
+  display: flex;
+  background-color: rgb(82, 78, 76);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.6rem;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.fechar{
+    cursor: pointer;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: #fff;
+}
+#mypopover p{
+    font-size: 20px;
+}
+li{
+    font-size: 23px;
+    margin: 15px;
+}
+#mypopover h3{
+    font-size:x-large;
+}

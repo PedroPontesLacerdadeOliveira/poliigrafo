@@ -1,0 +1,4 @@
+function avancar(){
+elementoPergunta=document.getElementById("pergunta").innerHTML=perguntas[0+1];
+elementoPergunta.innerHTML=perguntas;
+}

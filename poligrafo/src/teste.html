@@ -1,0 +1,85 @@
+<div class="interrogatorio-container">
+    <span id="progresso-contador">Pergunta 1 de 10</span>
+    <h2 id="pergunta-texto">Carregando...</h2>
+    
+    <div id="botoes-container" class="botoes-respostas">
+        <button onclick="responder('Sim')">Sim</button>
+        <button onclick="responder('Não')">Não</button>
+    </div>
+</div><script>
+// 1. O Array com as 10 perguntas do seu formulário
+const perguntas = [
+    "Você já mentiu para algum amigo próximo?",
+    "Você possui algum segredo que nunca contou a ninguém?",
+    "Você já quebrou alguma regra importante no trabalho ou na escola?",
+    "Você costuma guardar rancor de situações do passado?",
+    "Você se considera uma pessoa totalmente transparente?",
+    "Você já pegou algo emprestado e esqueceu de devolver?",
+    "Você sente ansiedade ao ser questionado sobre suas atitudes?",
+    "Você já omitiu a verdade para evitar uma briga?",
+    "Você confia facilmente em desconhecidos?",
+    "Você mudaria alguma grande decisão do seu passado?"
+];
+
+// 2. Variáveis de controle
+let indiceAtual = 0;
+// Um array para armazenar o histórico de respostas do usuário
+let respostasColetadas = [];
+
+// 3. Função para exibir a pergunta da vez
+function mostrarPergunta() {
+    // Condição de parada: se o índice passou de 10, o questionário acabou
+    if (indiceAtual >= perguntas.length) {
+        finalizarInterrogatorio();
+        return;
+    }
+
+    // Atualiza o texto da pergunta e o contador visual
+    document.getElementById("pergunta-texto").innerText = perguntas[indiceAtual];
+    document.getElementById("progresso-contador").innerText = `Pergunta ${indiceAtual + 1} de ${perguntas.length}`;
+}
+
+// 4. Função chamada ao clicar em Sim ou Não
+function responder(escolha) {
+    // Salva a resposta dada no array de histórico
+    respostasColetadas.push({
+        pergunta: perguntas[indiceAtual],
+        resposta: escolha
+    });
+
+    // Avança o índice para a próxima pergunta
+    indiceAtual++;
+
+    // Chama a função novamente para atualizar a tela
+    mostrarPergunta();
+}
+
+// 5. Função que mostra o resultado final e os contadores
+function finalizarInterrogatorio() {
+    // Conta quantas vezes foi "Sim" e quantas foi "Não"
+    const totalSim = respostasColetadas.filter(item => item.resposta === 'Sim').length;
+    const totalNao = respostasColetadas.filter(item => item.resposta === 'Não').length;
+
+    // Monta o relatório final na tela
+    const container = document.querySelector(".interrogatorio-container");
+    container.innerHTML = `
+        <h2>Fim do Questionário 📊</h2>
+        <p>Resumo das respostas coletadas:</p>
+        <ul style="text-align: left; margin: 20px 0;">
+            <li>Respostas <strong>Sim</strong>: ${totalSim}</li>
+            <li>Respostas <strong>Não</strong>: ${totalNao}</li>
+        </ul>
+        <button onclick="reiniciar()">Reiniciar Teste</button>
+    `;
+}
+
+// Função bônus para reiniciar o fluxo
+function reiniciar() {
+    indiceAtual = 0;
+    respostasColetadas = [];
+    // Recarrega a estrutura original dos botões
+    location.reload(); 
+}
+
+// Inicia o formulário mostrando a primeira pergunta
+mostrarPergunta();</script>

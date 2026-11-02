@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polígrafo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main class="banner">
+    <nav>
+        <h1>Better Call Saul</h1> 
+
+    </nav>
+    <div class="container">
+        
+        <h2><b>Responda todas as perguntas.</b></h2>
+        <button popovertarget="mypopover" class="primeiro">?</button>
+<div id="mypopover" popover="manual"><button class="fechar" popovertarget="mypopover" popovertargetaction="hide">X</button>
+     <h2>Como Funciona?</h2>
+     <p> O Teste do Polígrafo tem como objetivo apontar o comportamento de uma pessoa, 
+        por meio de um interrogatório com uma série de perguntas.</p>
+        <h3>Como funciona o veredito ?</h3>
+    <ul>
+        <li>Menos 5 Perguntas respondidas com "Sim" = Inocente. </li>
+        <li>5 Perguntas respondidas com "Sim" = Suspeito. </li>
+        <li>De 6 à 8 Perguntas respondidas com "Sim" = Cúmplice. </li>
+        <li>De 9 a 10 Perguntas respondidas com "Sim = Culpado</li>
+        <p>O sistema também avalia o comportamento corporal durante as perguntas.</p>
+    </ul>
+    
+    </div>
+    
+        <section class="card">
+            <h2 id="contador-pergunta">Pergunta 1 de 10</h2>
+            <p id="pergunta"></p>
+            <button class="sim" id="sim" onclick="contabilizar(event)">
+<b>Sim</b>
+            </button>
+            <button class="não" id="nao" onclick="contabilizar(event)">
+<b>Não</b>
+            </button>
+           
+       
+ </section> 
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
